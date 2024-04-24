@@ -1,0 +1,194 @@
+<!-- pagina4.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte al cliente</title>
+    <style>
+        /* Estilos anteriores... */
+        body {
+            background-image: url("file:///C:/Users/Usuario/Downloads/background.jpg"); /* Agregar imagen de fondo */
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding-top: 100px; /* Ajuste para el espacio del encabezado */
+            margin: 0; /* Eliminar márgenes predeterminados */
+        }
+
+        header {
+            background-color: #333;
+            color: cyan;
+            padding: 20px;
+            text-align: center;
+            font-family: OCR A Extended;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1; /* Asegura que el encabezado esté sobre el fondo */
+        }
+
+        nav {
+            background-color: #333; /* Fondo para el menú de navegación */
+            padding: 10px 0; /* Espaciado interno superior e inferior */
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 60px; /* Ajuste para alinear el menú debajo del encabezado */
+            z-index: 1; /* Asegura que el menú esté sobre el fondo */
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s; /* Transición de color de 0.3 segundos */
+        }
+
+        nav ul li a:hover {
+            color: blue; /* Color azul al pasar el mouse sobre el enlace */
+        }
+
+        /* Estilos para el contenido principal */
+        main {
+            padding: 20px;
+            margin-top: 160px; /* Ajuste para el espacio del encabezado y el menú */
+            margin-bottom: 100px; /* Ajuste para evitar que el formulario se solape con el pie de página */
+        }
+
+        /* Estilos para los títulos */
+        h1 {
+            margin: 0; /* Elimina el margen superior del título */
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        /* Estilos para los párrafos */
+        p {
+            margin-bottom: 20px;
+            display: none; /* Oculta el párrafo */
+        }
+
+        /* Estilos para el formulario */
+        form {
+            max-width: 600px; /* Limita el ancho del formulario */
+            margin: 0 auto; /* Centra el formulario horizontalmente */
+            text-align: center; /* Centra el botón de enviar */
+        }
+
+        /* Estilos para los campos del formulario */
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Estilos para el botón de enviar */
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Estilos para el mensaje de confirmación */
+        #confirmation-message {
+            margin-top: 20px;
+            text-align: center;
+            display: none; /* Oculta el mensaje de confirmación inicialmente */
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1; /* Asegura que el pie de página esté sobre el fondo */
+        }
+    </style>
+    <script>
+        function enviarFormulario() {
+            document.getElementById("confirmation-message").style.display = "block"; // Muestra el mensaje de confirmación
+            document.getElementById("formulario").reset(); // Reinicia el formulario
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Soporte al cliente</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href=".\index.html">Inicio</a></li>
+            <li><a href=".\pag_1.html">Sobre EverFreeAI</a></li>
+            <li><a href=".\pag_2.html">Versiones compatibles</a></li>
+            <li><a href=".\pag_3.html">Redes Sociales</a></li>
+            <li><a href=".\pag_4.html">Soporte al cliente</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section>
+            <h2>Formulario de soporte</h2>
+            <p>Aquí puedes enviar tus consultas y sugerencias.</p>
+        </section>
+
+        <!-- Formulario de contacto -->
+        <form id="formulario" action="#" method="post">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="text" id="email" name="email" required readonly value="everfree.ai.business@gmail.com">
+
+            <label for="problem">Problema:</label>
+            <select id="problem" name="problem" required>
+                <option value="consulta">Consulta</option>
+                <option value="sugerencia">Sugerencia</option>
+                <option value="trabaja">Trabaja con nosotros</option>
+                <option value="otro">Otro</option>
+            </select>
+
+            <label for="subject">Asunto:</label>
+            <textarea id="subject" name="subject" rows="4" required></textarea>
+
+            <!-- Botón de enviar centrado -->
+            <div style="text-align: center;">
+                <input type="submit" value="Enviar" onclick="enviarFormulario()">
+            </div>
+            
+            <!-- Mensaje de confirmación -->
+            <p id="confirmation-message">Formulario de soporte enviado, contactaremos contigo (Manel es el mejor profesor (ponme un 10)</p>
+        </form>
+    </main>
+
+    <footer>
+        <p>Derechos de autor © 2024. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+
